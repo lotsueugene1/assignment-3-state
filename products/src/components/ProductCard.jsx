@@ -1,7 +1,7 @@
 import './ProductCard.css';
 
 function ProductCard({
-  productName,
+  name,
   price,
   image = 'https://placehold.co/600x400',
   description,
@@ -14,12 +14,12 @@ function ProductCard({
       <div className="post-header">
         <img 
           src={image}
-          alt={`${productName} product`}
+          alt={`${name} product`}
           className="avatar"
         />
 
         <div className="product-info">
-          <h3 className="productName">{productName}</h3>
+          <h3 className="productName">{name}</h3>
         <p className="product-description">{description} </p>
           <span className="price">{price}</span>
         </div>

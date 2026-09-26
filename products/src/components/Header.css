@@ -73,3 +73,40 @@
     transition: none;
   }
 }
+
+/*
+ * AI-generated cart badge styles (OpenAI Codex).
+ */
+.app-header .cart-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: #e2e8f0;
+}
+
+.app-header .cart-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.app-header .cart-container > span:last-child {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  color: #ffffff;
+  background-color: #ef4444;
+  border: 2px solid #0f172a;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}

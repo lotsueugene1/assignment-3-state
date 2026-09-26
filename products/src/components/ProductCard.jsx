@@ -4,7 +4,7 @@ function ProductCard({
   name,
   price,
   image = 'https://placehold.co/600x400',
-  description,
+  description, addToCart
 }) {
 
   return (
@@ -24,6 +24,9 @@ function ProductCard({
           <span className="price">{price}</span>
         </div>
 
+        <div className="cart-actions">
+            <button className="action-btn" onClick={addToCart}>Add to Cart </button>
+        </div>
       </div>
 
     </div>

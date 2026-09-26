@@ -54,7 +54,7 @@ function App() {
 const [cart, setCart] = useState([])
 
 const addToCart = () => {
-  setCart(...cart, products)
+  setCart([...cart, product])
 };
 
   return (
@@ -71,7 +71,7 @@ const addToCart = () => {
             price={product.price}
             image={product.image}
             description={product.description}
-            addToCart ={ () => addToCart(product)}
+            addToCart ={ (product) => addToCart(product)}
           />
         ))}
       </main>

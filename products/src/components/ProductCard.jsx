@@ -11,7 +11,7 @@ function ProductCard({
 
     <div className="product-card">
 
-      <div className="post-header">
+      <div className="product-header">
         <img 
           src={image}
           alt={`${name} product`}

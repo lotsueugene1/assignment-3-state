@@ -24,7 +24,7 @@
   border-color: #93c5fd;
 }
 
-.product-card .post-header {
+.product-card .product-header {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -75,7 +75,7 @@
     margin: 16px 0;
   }
 
-  .product-card .post-header {
+  .product-card .product-header {
     flex-direction: column;
     align-items: stretch;
     gap: 18px;

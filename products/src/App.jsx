@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import ProductCard from './components/ProductCard';
+import CartIterm from './components/CartItem';
 import { useState } from "react";
 
 function App() {
@@ -57,26 +58,49 @@ const addToCart = (product) => {
   setCart([...cart, product])
 };
 
+const removeFromCart = (id) => {
+  setCart(cart.filter(product => product.id !== id));
+};
+
   return (
     <div className="app">
      
       <Header cartCount={cart.length} />
-      <Hero /> 
-      <main className="main-content">
-        <h2>Featured Products</h2>
-      {products.map(product => (
-          <ProductCard 
-            key={product.id}  
-            name={product.name}
-            price={product.price}
-            image={product.image}
-            description={product.description}
-            addToCart ={ () => addToCart(product)}
-          />
-        ))}
-      </main>
+    <Hero />
 
-      <Footer />
+    <main className="shop-layout">
+    <section className="products-section">
+    <h2>Featured Products</h2>
+
+    <div className="products-grid">
+      {products.map(product => (
+        <ProductCard
+          key={product.id}
+          name={product.name}
+          price={product.price}
+          image={product.image}
+          description={product.description}
+          addToCart={() => addToCart(product)}
+        />
+      ))}
+    </div>
+  </section>
+
+  <aside className="cart-panel">
+    <h2>Shopping Cart</h2>
+
+    {cart.map(product => (
+      <CartIterm
+        key={product.id}
+        name={product.name}
+        price={product.price}
+        removeFromCart={() => removeFromCart(product.id)}
+      />
+    ))}
+  </aside>
+</main>
+
+<Footer />
     </div>
   );
 }

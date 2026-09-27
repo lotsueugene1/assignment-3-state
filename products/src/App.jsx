@@ -58,8 +58,10 @@ const addToCart = (product) => {
   setCart([...cart, product])
 };
 
-const removeFromCart = (id) => {
-  setCart(cart.filter(product => product.id !== id));
+const removeFromCart = (indexToRemove) => {
+  setCart(currentCart =>
+    currentCart.filter((__, index) => index !== indexToRemove)
+  );
 };
 
 const totalCart = cart.reduce(
@@ -98,14 +100,14 @@ const totalCart = cart.reduce(
     <p className="empty-cart">Your cart is empty.</p>
   ) : (
     <>
-      {cart.map(product => (
-        <CartIterm
-          key={product.id}
-          name={product.name}
-          price={product.price}
-          removeFromCart={() => removeFromCart(product.id)}
-        />
-      ))}
+      {cart.map((product, index) => (
+  <CartIterm
+    key={`${product.id}-${index}`}
+    name={product.name}
+    price={product.price}
+    removeFromCart={() => removeFromCart(index)}
+  />
+))}
 
       <p>Total: ${totalCart.toFixed(2)}</p>
     </>

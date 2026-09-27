@@ -62,6 +62,11 @@ const removeFromCart = (id) => {
   setCart(cart.filter(product => product.id !== id));
 };
 
+const totalCart = cart.reduce(
+  (total, product) => total + product.price,
+  0
+);
+
   return (
     <div className="app">
      
@@ -97,6 +102,7 @@ const removeFromCart = (id) => {
         removeFromCart={() => removeFromCart(product.id)}
       />
     ))}
+    <p>Total: ${totalCart.toFixed(2)}</p>
   </aside>
 </main>
 

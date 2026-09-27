@@ -156,3 +156,7 @@ body {
     position: static;
   }
 }
+
+.cart-panel h2 {
+  margin-bottom: 18px;
+}
